@@ -1,5 +1,6 @@
 package com.interview.entity;
 
+import com.interview.enums.AddressType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,7 +21,7 @@ public class Address implements Serializable {
     @Column(length = 500)
     private String address;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private AddressType addressType;
 
     private Boolean active;

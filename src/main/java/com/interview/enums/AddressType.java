@@ -1,4 +1,4 @@
-package com.interview.entity;
+package com.interview.enums;
 
 public enum AddressType {
     HOME,

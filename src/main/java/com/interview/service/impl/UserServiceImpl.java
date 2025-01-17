@@ -7,12 +7,15 @@ import com.interview.entity.User;
 import com.interview.repository.UserRepository;
 import com.interview.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Service
+@Repository
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
@@ -20,6 +23,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public Optional<UserDto> findUserById(Long id) {
         return userRepo.findById(id).map(this::toUserDto);
     }

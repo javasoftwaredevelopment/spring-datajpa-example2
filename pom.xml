@@ -9,10 +9,10 @@
         <relativePath/>
     </parent>
 
-    <name>spring-datajpa-example1</name>
+    <name>spring-datajpa-example2</name>
 
     <groupId>com.springtutor</groupId>
-    <artifactId>spring-datajpa-example1</artifactId>
+    <artifactId>spring-datajpa-example2</artifactId>
     <packaging>jar</packaging>
 
     <properties>

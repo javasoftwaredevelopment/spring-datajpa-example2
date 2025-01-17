@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "company_user", schema = "public")
+@Table(name = "users", schema = "public")
 @NoArgsConstructor @AllArgsConstructor
 @Getter @Setter
 @EqualsAndHashCode(of = {"id"})
@@ -17,11 +17,14 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 100)
+    @Column(length = 50)
     private String firstName;
 
-    @Column(length = 100)
+    @Column(length = 50)
     private String lastName;
+
+    @Column(length = 100)
+    private String emailAddress;
 
     @OneToMany(mappedBy = "user")
     private List<Address> userAddresses;
